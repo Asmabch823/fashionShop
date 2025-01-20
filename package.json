@@ -1,0 +1,33 @@
+{
+  "name": "fashion_projects",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^1",
+    "@sap/cds": "^8",
+    "@sap/cds-mtxs": "^2.4.2",
+    "@sap/hana-client": "^2.23.24",
+    "@sap/hdi-deploy": "^5.3.2",
+    "express": "^4",
+    "sqlite3": "^5.1.7"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "build": {
+      "tasks": [
+        {
+          "for": "hana",
+          "dest": "../db"
+        },
+        {
+          "for": "node-cf"
+        }
+      ]
+    }
+  }
+}
